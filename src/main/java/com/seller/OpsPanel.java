@@ -1,6 +1,7 @@
 package main.java.com.seller;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,15 +21,25 @@ public class OpsPanel {
 
 			//driver.findElement(By.xpath("//*[@id=\'wrap\']/div/div/a")).click();
 			//Thread.sleep(1000);
-			driver.findElement(By.xpath("//*[@name=\'username\']")).sendKeys("testingseller14");
 			driver.findElement(By.xpath("//*[@name=\'password\']")).sendKeys("ibibo@");
+			driver.findElement(By.xpath("//*[@name=\'username\']")).sendKeys("testingseller14");
 			driver.findElement(By.xpath("//*[@name=\'password\']")).sendKeys(Keys.ENTER);
 			Thread.sleep(1000);
-			//driver.findElement(By.xpath("//*[@id=\'wrap\']/div[2]/div/div[4]/form/fieldset/input")).click();
-			//Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id=\'start_time\']")).click();
+			driver.findElement(By.xpath("//*[@id=\'ui-datepicker-div\']/table/tbody/tr[4]/td[4]/a")).click();
+			driver.findElement(By.xpath("//*[@id=\'end_time\']")).click();
+			driver.findElement(By.xpath("//*[@id=\'ui-datepicker-div\']/table/tbody/tr[5]/td[3]/a")).click();			
+			driver.findElement(By.xpath("//*[@id=\'booking_status\']")).click();
+	
+			
+			driver.findElement(By.xpath("//*[@id=\'side-menu\']/li[2]/ul/li[1]/a")).click();
+			driver.findElement(By.xpath("//*[@id=\'dataTables-reports_filter\']/label/input")).sendKeys("5565caa669702d7dec000000");
+			driver.findElement(By.xpath("//*[@id=\'dataTables-reports_filter\']/label/input")).clear();
+			driver.findElement(By.xpath("//*[@id=\'dataTables-reports_filter\']/label/input")).sendKeys(Keys.ENTER);
+			Thread.sleep(1000);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace();	
 		} finally {
 			//driver.close();
 		}
