@@ -1,4 +1,4 @@
-package main.java.Test.Ibibo;
+package main.java.com.seller;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
